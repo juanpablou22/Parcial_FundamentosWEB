@@ -1,44 +1,180 @@
 /* Limpieza básica */
-* { margin: 0; padding: 0; box-sizing: border-box; } /* Quita márgenes/rellenos externos y asegura que el borde sea parte del ancho total */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial Black', sans-serif; }
 
 /* Estilo para la barra de navegación */
 .top-nav ul {
-    list-style: none; /* Elimina las viñetas (puntos) de la lista <li> */
-    display: flex;    /* Activa Flexbox para alinear elementos horizontalmente */
-    justify-content: flex-end; /* Alinea todos los ítems hacia la derecha del contenedor */
-    gap: 20px;        /* Crea un espacio constante de 20px entre cada enlace */
-    padding: 20px;    /* Espacio interno alrededor de la barra de navegación */
-    background-color: #002244; /* Aplica el color de fondo azul marino oscuro */
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+    background-color: #002244;
 }
 
 .top-nav a {
-    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
-    color: white;          /* Cambia el color del texto a blanco para que resalte */
-    font-weight: bold;     /* Pone el texto de los enlaces en negrita */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /* Estilo para el título grande */
 .header-content {
-    padding: 40px 0;    /* Añade espacio arriba y abajo de 40px para separar el título */
-    text-align: center; /* Centra el contenido (texto) dentro de este contenedor */
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .header-content h1 {
-    font-size: 3rem;   /* Define un tamaño de fuente grande para el título */
-    color: #002244;    /* Aplica el mismo azul marino oscuro del diseño */
+    font-size: 3.5rem;
+    color: #002244;
+    font-weight: 900;
 }
 
-/* GALERÍA (La parte de abajo con los 3 recuadros) */
+/* Featured Item */
+.featured-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 40px;
+    max-width: 1100px;
+}
+
+.featured-item img {
+    max-width: 400px;
+    height: auto;
+}
+
+.inquire-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #002244;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* GALERÍA */
+.section-title {
+    text-align: center;
+    color: #002244;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 
 .gallery {
-    display: grid; /* Activa CSS Grid para una estructura de rejilla bidimensional */
-    grid-template-columns: repeat(3, 1fr); /* Divide el contenedor en 3 columnas iguales */
-    gap: 20px;     /* Crea un espacio de 20px entre cada recuadro (columna y fila) */
-    padding: 40px; /* Crea espacio interno entre los bordes de la galería y los recuadros */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Cada tarjeta de producto */
 .card {
-    border: 1px solid #ccc; /* Aplica un borde gris fino de 1px a cada tarjeta */
-    padding: 10px;          /* Añade espacio interno para separar el contenido del borde */
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* --- ESTILO FOOTER (BASADO EN LA IMAGEN) --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Separa el contenido superior, medio e inferior */
+    padding: 40px 20px;
+    background-color: white;
+    color: #002244; /* El azul marino oscuro que venías usando */
+    font-family: Arial, sans-serif; /* O una similar como Helvetica o Inter */
+    min-height: 400px; /* Ajusta según necesites espacio vertical */
+}
+
+/* Texto pequeño superior "MADE BY STEVE" */
+.footer-top {
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Bloque central de enlaces grandes */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #002244;
+    font-size: 3.5rem; /* Tamaño grande e impactante */
+    font-weight: 900;    /* Grosor máximo */
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* Contenedor de la base (DAILY DAIRY y ©2025) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* --- Ajuste Responsive --- */
+@media (max-width: 768px) {
+    .footer-links a {
+        font-size: 2.2rem; /* Reduce el tamaño en móviles para que no se corte */
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 768px) {
+    .top-nav ul {
+        justify-content: center;
+    }
+
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .featured-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .footer-links a {
+        font-size: 2.5rem; /* Reducimos el tamaño para móviles */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
