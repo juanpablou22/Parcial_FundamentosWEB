@@ -1,6 +1,10 @@
 /* Limpieza básica */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial Black', sans-serif; }
 
+body{
+    background-color: rgb(221, 221, 199);
+}
+
 /* Estilo para la barra de navegación */
 .top-nav ul {
     list-style: none;
@@ -91,7 +95,7 @@ footer {
     align-items: center;
     justify-content: space-between; /* Separa el contenido superior, medio e inferior */
     padding: 40px 20px;
-    background-color: white;
+    background-color: rgb(221, 221, 199);
     color: #002244; /* El azul marino oscuro que venías usando */
     font-family: Arial, sans-serif; /* O una similar como Helvetica o Inter */
     min-height: 400px; /* Ajusta según necesites espacio vertical */
